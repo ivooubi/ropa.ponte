@@ -10,14 +10,16 @@
             --bg-color: #ffffff;
             --text-color: #000000;
             --accent-color: #f0f0f0;
-            --shine-color: #ffffff;
+            --shimmer-start: #000000;
+            --shimmer-mid: #A0A0A0;
         }
 
         .dark {
             --bg-color: #121212;
             --text-color: #ffffff;
             --accent-color: #1e1e1e;
-            --shine-color: #333333;
+            --shimmer-start: #ffffff;
+            --shimmer-mid: #5E5E5E;
         }
 
         body {
@@ -42,15 +44,19 @@
             margin: 0;
             position: relative;
             display: inline-block;
-            animation: shine 3s infinite alternate ease-in-out;
+            background: linear-gradient(135deg, var(--shimmer-start), var(--shimmer-mid), var(--shimmer-start));
+            background-clip: text;
+            color: transparent;
+            background-size: 200% 100%;
+            animation: shimmer 5s linear infinite;
         }
 
-        @keyframes shine {
+        @keyframes shimmer {
             0% {
-                text-shadow: 0 0 5px var(--shine-color), 0 0 10px var(--shine-color), 0 0 15px var(--shine-color);
+                background-position: 200% 0;
             }
             100% {
-                text-shadow: 0 0 10px var(--shine-color), 0 0 20px var(--shine-color), 0 0 30px var(--shine-color), 0 0 40px var(--shine-color);
+                background-position: -200% 0;
             }
         }
 
@@ -164,12 +170,12 @@
         <h2>Ralph Lauren</h2>
         <div class="products">
             <a href="https://www.spartoo.es/Polo-Ralph-Lauren-TINNA-x18841310.php" class="product" style="text-decoration: none; color: inherit;">
-                <img src="https://photos6.spartoo.es/photos/188/18841311/18841311_350_A.jpg" alt="Camiseta Clásica Polo">
+                <img src="https://photos6.spartoo.co.uk/photos/188/18841310/18841310_1200_A.jpg" alt="Camiseta Clásica Polo">
                 <p>Camiseta Clásica Polo</p>
                 <p>$50</p>
             </a>
             <a href="https://www.aboutyou.es/p/polo-ralph-lauren/camiseta-7332090" class="product" style="text-decoration: none; color: inherit;">
-                <img src="https://m.media-amazon.com/images/I/5123z4sPiWL._UY1000_.jpg" alt="Camiseta con Logo">
+                <img src="https://cdn.aboutstatic.com/file/images/7d41b00a3de35de95747d43ddd8c0a17.png" alt="Camiseta con Logo">
                 <p>Camiseta con Logo</p>
                 <p>$45</p>
             </a>
