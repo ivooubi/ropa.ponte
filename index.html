@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ropa.Ponte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #000000;
+            --accent-color: #f0f0f0;
+            --shine-color: #ffffff;
+        }
+
+        .dark {
+            --bg-color: #121212;
+            --text-color: #ffffff;
+            --accent-color: #1e1e1e;
+            --shine-color: #333333;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.5s ease, color 0.5s ease;
+            overflow-x: hidden;
+        }
+
+        header {
+            position: relative;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-transform: uppercase;
+            margin: 0;
+            position: relative;
+            display: inline-block;
+            animation: shine 3s infinite alternate ease-in-out;
+        }
+
+        @keyframes shine {
+            0% {
+                text-shadow: 0 0 5px var(--shine-color), 0 0 10px var(--shine-color), 0 0 15px var(--shine-color);
+            }
+            100% {
+                text-shadow: 0 0 10px var(--shine-color), 0 0 20px var(--shine-color), 0 0 30px var(--shine-color), 0 0 40px var(--shine-color);
+            }
+        }
+
+        #toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2em;
+            cursor: pointer;
+            transition: transform 0.5s ease;
+        }
+
+        #toggle:hover {
+            transform: scale(1.2);
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        section:nth-child(odd) {
+            animation-delay: 0.2s;
+        }
+
+        section:nth-child(even) {
+            animation-delay: 0.4s;
+        }
+
+        h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .products {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .product {
+            background-color: var(--accent-color);
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 50%;
+            margin-bottom: 40px;
+        }
+
+        .product:nth-child(odd) {
+            align-self: flex-end;
+        }
+
+        .product:nth-child(even) {
+            align-self: flex-start;
+        }
+
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: opacity 0.3s ease;
+        }
+
+        .product:hover img {
+            opacity: 0.9;
+        }
+
+        .product p {
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            .product {
+                width: 80%;
+            }
+            .product:nth-child(odd),
+            .product:nth-child(even) {
+                align-self: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Ropa.Ponte</h1>
+        <div id="toggle">☀️</div>
+    </header>
+
+    <section id="ralph-lauren">
+        <h2>Ralph Lauren</h2>
+        <div class="products">
+            <a href="https://www.spartoo.es/Polo-Ralph-Lauren-TINNA-x18841310.php" class="product" style="text-decoration: none; color: inherit;">
+                <img src="https://photos6.spartoo.es/photos/188/18841311/18841311_350_A.jpg" alt="Camiseta Clásica Polo">
+                <p>Camiseta Clásica Polo</p>
+                <p>$50</p>
+            </a>
+            <a href="https://www.aboutyou.es/p/polo-ralph-lauren/camiseta-7332090" class="product" style="text-decoration: none; color: inherit;">
+                <img src="https://m.media-amazon.com/images/I/5123z4sPiWL._UY1000_.jpg" alt="Camiseta con Logo">
+                <p>Camiseta con Logo</p>
+                <p>$45</p>
+            </a>
+            <!-- Añade más productos según necesites -->
+        </div>
+    </section>
+
+    <section id="ami">
+        <h2>Ami</h2>
+        <div class="products">
+            <a href="https://www.mytheresa.com/int/es/hombre/ami-paris-camiseta-ami-de-coeur-de-algodon-negro-p00832206" class="product" style="text-decoration: none; color: inherit;">
+                <img src="https://www.mytheresa.com/media/1094/1238/100/62/P00832206.jpg" alt="Camiseta Ami Paris">
+                <p>Camiseta Ami Paris</p>
+                <p>$60</p>
+            </a>
+            <a href="https://www.santaeulalia.com/products/ami-paris-sudadera-logo-algodon-715-000145-01" class="product" style="text-decoration: none; color: inherit;">
+                <img src="https://www.santaeulalia.com/cdn/shop/files/545-001954-01_01.jpg?v=1756728539" alt="Sudadera Ami">
+                <p>Sudadera Ami</p>
+                <p>$55</p>
+            </a>
+            <!-- Añade más productos según necesites -->
+        </div>
+    </section>
+
+    <script>
+        const toggle = document.getElementById('toggle');
+        toggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            if (document.body.classList.contains('dark')) {
+                toggle.style.transform = 'rotate(180deg)';
+                setTimeout(() => {
+                    toggle.textContent = '🌙';
+                    toggle.style.transform = 'rotate(0deg)';
+                }, 250);
+            } else {
+                toggle.style.transform = 'rotate(180deg)';
+                setTimeout(() => {
+                    toggle.textContent = '☀️';
+                    toggle.style.transform = 'rotate(0deg)';
+                }, 250);
+            }
+        });
+    </script>
+</body>
+</html>
